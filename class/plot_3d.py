@@ -1,12 +1,15 @@
 import matplotlib.pyplot as plt
 import cv2
-x = [1,2,3,4,5,6,7]
-y = [2,6,2,7,9,3,1]
-z = [4,7,9,5,2,6,7]
-axis = plt.axes(projection="3d")
-axis.scatter(x,y,z,color='red')
-plt.show()
-img = cv2.imread('images/tree.png')
-axis = plt.axes(projection="3d")
-axis.plot(img)
+import numpy as np
+image = cv2.imread('class\images\modi.jpg',0)
+x = np.arange(0,1431)
+y = np.arange(0,1202)
+x , y = np.meshgrid(x,y)
+z = image
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+ax.plot_surface(x, y, z,cmap='gray')
+
+# Show the plot
 plt.show()
