@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 img = cv2.imread('class\images\enistein.png')
-print(img.shape)
+print(img.shape) 
 x = np.arange(0,493)
 y = np.arange(0,493)
 x,y = np.meshgrid(x,y)
