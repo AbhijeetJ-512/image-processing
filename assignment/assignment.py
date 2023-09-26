@@ -69,6 +69,12 @@ try:
     disp(blurred_image, "Blurred Image")
 
     equalized = image.histogram_equalization()
+    plt.hist(image.image.ravel(), bins=256, range=(0, 255))
+    plt.hist(equalized.ravel(), bins=256, range=(0, 255))
+    plt.xlabel("Pixel Value")
+    plt.ylabel("Frequency")
+    plt.title("Histogram")
+    plt.show()
     stacked_images = np.hstack((gray_image, equalized))
     stacked_images = image_resize(stacked_images)
     disp(stacked_images, "Original gray vs. Equalized")
